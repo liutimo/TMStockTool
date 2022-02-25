@@ -20,11 +20,11 @@ add_subdirectory(data)
 
 set(TS_FILES TimoStockTool_zh_CN.ts)
 
+file(GLOB SRC *.cpp *.h framelesswidget/*.h framelesswidget/*.cpp ui/*.h ui/*.cpp )
+
 set(PROJECT_SOURCES
-        main.cpp
-        widget.cpp
-        widget.h
         widget.ui
+        ${SRC}
         ${TS_FILES}
 )
 

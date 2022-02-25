@@ -35,12 +35,21 @@ int main(int argc, char *argv[])
 //   request.headers().add(U("Referer"), U("https://finance.sina.com.cn"));
 //   request.set_request_uri(builder.to_string());
 //   auto response = client.request(request).get();
+//    auto str = DataSourceSina().getRealtimeData("sz301111");
+//    qDebug() << str;
+//    char buffer[1024]{};
+//    for (int i = 0; i < 20; ++i) {
+//        sprintf(buffer + i * 3, "%02x ", str.data()[i + 20]);
+//    }
+//    qDebug() << buffer;
 
-    qDebug() << DataSourceSina().getRealtimeData("sz301111").c_str();
-
+//    QString qstr = QString::fromLocal8Bit(DataSourceSina().getRealtimeData("sz301111").c_str());
+//    qDebug() << qstr;
+//    for (int i = 0; i < 20; ++i) {
+//        sprintf(buffer + i * 3, "%02x ", qstr.toStdString().data()[i + 20]);
+//    }
+//    qDebug() << ;
     Widget w;
     w.show();
-
-
     return a.exec();
 }

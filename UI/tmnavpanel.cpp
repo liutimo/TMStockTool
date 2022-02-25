@@ -9,10 +9,10 @@
 
 TMNavPanel::TMNavPanel(QWidget *parent) : QWidget(parent), mNavItemId(0), mNavItemFixedHeight(NAVITEM_FIXED_HEIGHT)
 {
-    connect(&mBtnGroup, QOverload<int>::of(&QButtonGroup::buttonClicked), this,  [this](int id){
-        qDebug() << mBtnGroup.checkedId() << ":" << id;
-        emit navItemChanged(id);
-    });
+//    connect(&mBtnGroup, QOverload<int>::of(&QButtonGroup::buttonClicked), this,  [this](int id){
+//        qDebug() << mBtnGroup.checkedId() << ":" << id;
+//        emit navItemChanged(id);
+//    });
 }
 
 TMNavPanel::~TMNavPanel()

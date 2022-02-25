@@ -9,7 +9,7 @@ class DataSourceSina : public DataSource
 public:
     DataSourceSina();
 
-    std::string getRealtimeData(const std::string &codes) override;
+    std::wstring getRealtimeData(const std::string &codes) override;
 
 private:
     static const std::string HOST;
