@@ -10,12 +10,12 @@
 static void trim_left(std::string &str) {
   str.erase(std::begin(str),
             std::find_if(std::begin(str), std::end(str),
-                         [](int ch) { return !std::isspace(ch); }));
+                         [](int ch) { return !std::isspace(ch, std::locale()); }));
 }
 
 static void trim_right(std::string &str) {
   str.erase(std::find_if(str.rbegin(), str.rend(),
-                         [](int ch) { return !std::isspace(ch); })
+                         [](int ch) { return !std::isspace(ch, std::locale()); })
                 .base(),
             std::end(str));
 }
