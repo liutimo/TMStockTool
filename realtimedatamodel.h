@@ -18,9 +18,9 @@ public:
 
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
 
-    void setData(const QVector<RTData>& data);
+    void setData(const std::vector<RTData>& data);
 private:
-    QVector<RTData> mData;
+    std::vector<RTData> mData;
 };
 
 #endif // REALTIMEDATAMODEL_H
