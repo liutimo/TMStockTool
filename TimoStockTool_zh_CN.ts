@@ -205,5 +205,10 @@
         <source>Widget</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="widget.cpp" line="46"/>
+        <source>Updated Time:</source>
+        <translation type="unfinished">更新时间：</translation>
+    </message>
 </context>
 </TS>
