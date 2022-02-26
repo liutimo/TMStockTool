@@ -10,12 +10,12 @@ set(CMAKE_AUTORCC ON)
 
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-
+find_package(Qt6 COMPONENTS Core5Compat REQUIRED)
 find_package(cpprestsdk CONFIG REQUIRED)
 find_package(QT NAMES Qt6 Qt5 COMPONENTS Widgets LinguistTools REQUIRED)
 find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Widgets LinguistTools REQUIRED)
 
-add_subdirectory(QHotKey)
+add_subdirectory(QHotkey)
 add_subdirectory(data)
 
 set(TS_FILES TimoStockTool_zh_CN.ts)
@@ -56,9 +56,7 @@ else()
 
     qt5_create_translation(QM_FILES ${CMAKE_SOURCE_DIR} ${TS_FILES})
 endif()
-target_link_libraries(TimoStockTool PRIVATE Qt${QT_VERSION_MAJOR}::Widgets datasource qhotkey
-    cpprestsdk::cpprest cpprestsdk::cpprestsdk_zlib_internal cpprestsdk::cpprestsdk_brotli_internal
-    )
+target_link_libraries(TimoStockTool PRIVATE Qt${QT_VERSION_MAJOR}::Widgets datasource qhotkey Qt6::Core5Compat)
 
 set_target_properties(TimoStockTool PROPERTIES
     MACOSX_BUNDLE_GUI_IDENTIFIER my.example.com

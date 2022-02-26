@@ -1,5 +1,7 @@
 #include "realtimedatamodel.h"
 #include <QColor>
+#include <QTextCodec>
+#include "utility.h"
 
 RealTimeDataModel::RealTimeDataModel(QObject *parent)
     : QAbstractTableModel{parent}
@@ -35,7 +37,11 @@ QVariant RealTimeDataModel::data(const QModelIndex &index, int role) const
             return QString::fromStdString(rtData.getCode());
         } else if (col == 1) {
             //可能有中文，需要转换编码
+#ifdef Q_OS_WIN
             return QString::fromLocal8Bit(rtData.getName());
+#else
+            return gbkStdString2QString(rtData.getName());
+#endif
         } else if (col == 2) {
             return QString("%1").arg(rtData.getIncQuota(), 0, 'f', 2);
         } else if (col == 3) {
