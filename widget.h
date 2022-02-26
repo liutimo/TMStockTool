@@ -8,6 +8,7 @@ namespace Ui { class Widget; }
 QT_END_NAMESPACE
 
 class RealTimeDataModel;
+class QSystemTrayIcon;
 
 class Widget : public FramelessWidgetImpl
 {
@@ -21,6 +22,7 @@ private:
     void initUI();
     void initTimer();
     void initTableView();
+    void initSystemTray();
 
 protected:
     void paintEvent(QPaintEvent *event) override;
@@ -30,5 +32,6 @@ private:
 
     QTimer *mTimer = nullptr;
     RealTimeDataModel *mDataModel = nullptr;
+    QSystemTrayIcon *mSystemTray = nullptr;
 };
 #endif // WIDGET_H

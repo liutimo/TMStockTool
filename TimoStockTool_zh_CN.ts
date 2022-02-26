@@ -206,9 +206,14 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="39"/>
+        <location filename="widget.cpp" line="42"/>
         <source>Updated Time:</source>
         <translation type="unfinished">更新时间：</translation>
+    </message>
+    <message>
+        <location filename="widget.cpp" line="75"/>
+        <source>exit</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

@@ -5,6 +5,8 @@
 #include <QPalette>
 #include <QTimer>
 #include <QDebug>
+#include <QSystemTrayIcon>
+#include <QMenu>
 #include "data/datasourcemanager.h"
 
 Widget::Widget(QWidget *parent)
@@ -20,6 +22,7 @@ Widget::Widget(QWidget *parent)
     initUI();
     initTimer();
     initTableView();
+    initSystemTray();
 }
 
 Widget::~Widget()
@@ -62,6 +65,16 @@ void Widget::initTableView()
 {
     mDataModel = new RealTimeDataModel(this);
     ui->tableView->setModel(mDataModel);
+}
+
+void Widget::initSystemTray()
+{
+    mSystemTray = new QSystemTrayIcon(this);
+    mSystemTray->setIcon(QIcon(":/imgs/imgs/stock.png"));
+    QMenu *menu = new QMenu(this);
+    menu->addAction(tr("exit"));
+    mSystemTray->setContextMenu(menu);
+    mSystemTray->show();
 }
 
 void Widget::paintEvent(QPaintEvent *event)
