@@ -206,14 +206,32 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="42"/>
+        <location filename="widget.cpp" line="43"/>
         <source>Updated Time:</source>
         <translation type="unfinished">更新时间：</translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="75"/>
-        <source>exit</source>
-        <translation type="unfinished"></translation>
+        <location filename="widget.cpp" line="78"/>
+        <source>Exit</source>
+        <translation type="unfinished">退出</translation>
+    </message>
+    <message>
+        <location filename="widget.cpp" line="79"/>
+        <location filename="widget.cpp" line="109"/>
+        <source>About</source>
+        <translation type="unfinished">关于</translation>
+    </message>
+    <message>
+        <location filename="widget.cpp" line="80"/>
+        <source>Settings</source>
+        <oldsource>Settinsg</oldsource>
+        <translation type="unfinished">设置</translation>
+    </message>
+    <message>
+        <location filename="widget.cpp" line="81"/>
+        <source>Show Main Widget</source>
+        <oldsource>Show MainWidget</oldsource>
+        <translation type="unfinished">显示主窗口</translation>
     </message>
 </context>
 </TS>

@@ -9,6 +9,7 @@ QT_END_NAMESPACE
 
 class RealTimeDataModel;
 class QSystemTrayIcon;
+class SettingsWidget;
 
 class Widget : public FramelessWidgetImpl
 {
@@ -33,5 +34,6 @@ private:
     QTimer *mTimer = nullptr;
     RealTimeDataModel *mDataModel = nullptr;
     QSystemTrayIcon *mSystemTray = nullptr;
+    SettingsWidget* mSettingsWidget = nullptr;
 };
 #endif // WIDGET_H

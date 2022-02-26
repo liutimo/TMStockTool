@@ -7,6 +7,7 @@
 #include <QDebug>
 #include <QSystemTrayIcon>
 #include <QMenu>
+#include "settingswidget.h"
 #include "data/datasourcemanager.h"
 
 Widget::Widget(QWidget *parent)
@@ -36,7 +37,7 @@ Widget::~Widget()
 
 void Widget::initUI()
 {
-    setWindowFlags(Qt::FramelessWindowHint | Qt::WindowStaysOnTopHint);
+    setWindowFlags(Qt::FramelessWindowHint | Qt::WindowStaysOnTopHint/* | Qt::Tool*/);
     setAttribute(Qt::WA_TranslucentBackground);
 
     ui->label->setText(tr("Updated Time:"));
@@ -71,10 +72,47 @@ void Widget::initSystemTray()
 {
     mSystemTray = new QSystemTrayIcon(this);
     mSystemTray->setIcon(QIcon(":/imgs/imgs/stock.png"));
+
+
     QMenu *menu = new QMenu(this);
-    menu->addAction(tr("exit"));
+    QAction* actionExit             = new QAction(tr("Exit"), this);
+    QAction* actionAbout            = new QAction(tr("About"), this);
+    QAction* actionSettings         = new QAction(tr("Settings"), this);
+    QAction* actionShowMainWidget   = new QAction(tr("Show Main Widget"), this);
+
+
+    menu->addAction(actionShowMainWidget);
+    menu->addAction(actionSettings);
+    menu->addAction(actionAbout);
+    menu->addAction(actionExit);
+
     mSystemTray->setContextMenu(menu);
     mSystemTray->show();
+
+    connect(actionShowMainWidget, &QAction::triggered, this, [this](){
+        if (isHidden()) {
+            show();
+        } else {
+            hide();
+        }
+    });
+
+    connect(actionSettings, &QAction::triggered, this, [this](){
+        if (mSettingsWidget == nullptr) {
+            mSettingsWidget = new SettingsWidget();
+        }
+        mSettingsWidget->show();
+    });
+
+    connect(actionAbout, &QAction::triggered, this, [this](){
+        QWidget* widget = new QWidget();
+        QLabel* label = new QLabel(tr("About"), widget);
+        widget->show();
+    });
+
+    connect(actionExit, &QAction::triggered, this, [this]() {
+        qApp->quit();
+    });
 }
 
 void Widget::paintEvent(QPaintEvent *event)
