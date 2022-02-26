@@ -8,4 +8,4 @@ file(GLOB INC *.h)
 
 find_package(cpprestsdk CONFIG REQUIRED)
 add_library(datasource ${SRC} ${INC})
-target_link_libraries(datasource  cpprestsdk::cpprest cpprestsdk::cpprestsdk_zlib_internal cpprestsdk::cpprestsdk_brotli_internal)
+target_link_libraries(datasource  cpprestsdk::cpprest)
