@@ -10,8 +10,7 @@ public:
 
     RTData parserRTData(const std::string &originData) override;
 
-    const std::string &getHOST() const;
-
+    std::vector<RTData> parserRTDatas(const std::string& originData) override;
 };
 
 #endif // DATAPARSERSINA_H

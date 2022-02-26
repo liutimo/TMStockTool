@@ -10,6 +10,8 @@ public:
     virtual ~DataParser() {}
 
     virtual RTData parserRTData(const std::string &originData) = 0;
+
+    virtual std::vector<RTData> parserRTDatas(const std::string& originData) = 0;
 };
 
 

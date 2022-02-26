@@ -25,6 +25,26 @@ RTData DataParserSina::parserRTData(const std::string &originData)
     std::string stockInfoStr = m.str(2).c_str();
 
     auto array = split(stockInfoStr, ",");
+    if (array.size() >= 3) {
+        RTData rtData(m.str(1), array[0], std::stof(array[1]), std::stof(array[2]), std::stof(array[3]));
+        if (array.size() >= 31) {
+            rtData.setUpdatedTime(array[30] + " " + array[31]);
+        }
+        return rtData;
+    }
 
-    return RTData(m.str(1), array[0], std::stof(array[1]), std::stof(array[2]), std::stof(array[3]));
+    return {};
+}
+
+std::vector<RTData> DataParserSina::parserRTDatas(const std::string &originData)
+{
+    std::vector<RTData> res;
+    auto array = split(originData, "\n");
+    for (const auto &str : array) {
+        RTData rtData = parserRTData(str);
+        if (rtData.isValid()) {
+            res.emplace_back(rtData);
+        }
+    }
+    return res;
 }

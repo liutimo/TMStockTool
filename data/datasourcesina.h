@@ -9,10 +9,11 @@ class DataSourceSina : public DataSource
 public:
     DataSourceSina();
 
-    std::wstring getRealtimeData(const std::string &codes) override;
+    std::string getRealtimeData(const std::string &code) override;
+
+    std::string getBatchRealtimeData(const std::vector<std::string>& codes) override;
 
 private:
-    static const std::string HOST;
     web::json::value REQUEST_PARAM;
 };
 

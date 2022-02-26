@@ -2,6 +2,7 @@
 #define DATA_H
 
 #include <string>
+#include <vector>
 
 class RTData {
 
@@ -9,7 +10,7 @@ public:
     RTData() = default;
 
     RTData(const std::string &code, const std::string &name,
-           float topen, float yclose, float now);
+           float topen, float yclose, float now, const std::string &updatedTime = "");
 
     RTData(const RTData&);
 
@@ -33,12 +34,18 @@ public:
     float getIncRate() const;
 
     float getIncQuota() const;
+
+    const std::string &getUpdatedTime() const;
+
+    void setUpdatedTime(const std::string &updatedTime);
+
 private:
     std::string mCode;
     std::string mName;
     float mTOpen;
     float mYClose;
     float mNow;
+    std::string mUpdatedTime;
 };
 
 

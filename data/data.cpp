@@ -1,8 +1,8 @@
 #include "data.h"
 
 
-RTData::RTData(const std::string &code, const std::string &name, float topen, float yclose, float now) :
-    mCode(code), mName(name), mTOpen(topen), mYClose(yclose), mNow(now)
+RTData::RTData(const std::string &code, const std::string &name, float topen, float yclose, float now, const std::string &updatedTime) :
+    mCode(code), mName(name), mTOpen(topen), mYClose(yclose), mNow(now), mUpdatedTime(updatedTime)
 {
 
 }
@@ -15,6 +15,7 @@ RTData::RTData(const RTData &rtData)
     mTOpen = rtData.mTOpen;
     mYClose = rtData.mYClose;
     mNow = rtData.mNow;
+    mUpdatedTime = rtData.mUpdatedTime;
 }
 
 const std::string &RTData::getCode() const
@@ -59,10 +60,20 @@ void RTData::setNow(float now)
 
 float RTData::getIncRate() const
 {
-    return (mNow - mYClose) / mYClose;
+    return (mNow - mYClose) / mYClose * 100;
 }
 
 float RTData::getIncQuota() const
 {
     return mNow - mYClose;
+}
+
+const std::string &RTData::getUpdatedTime() const
+{
+    return mUpdatedTime;
+}
+
+void RTData::setUpdatedTime(const std::string &updatedTime)
+{
+    mUpdatedTime = updatedTime;
 }
