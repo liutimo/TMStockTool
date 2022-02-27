@@ -168,6 +168,11 @@
         <source>Form</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="mainwidget.ui" line="59"/>
+        <source>TextLabel</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>QHotkey</name>
@@ -208,30 +213,28 @@
     <message>
         <location filename="widget.cpp" line="43"/>
         <source>Updated Time:</source>
-        <translation type="unfinished">更新时间：</translation>
-    </message>
-    <message>
-        <location filename="widget.cpp" line="78"/>
-        <source>Exit</source>
-        <translation type="unfinished">退出</translation>
-    </message>
-    <message>
-        <location filename="widget.cpp" line="79"/>
-        <location filename="widget.cpp" line="109"/>
-        <source>About</source>
-        <translation type="unfinished">关于</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="widget.cpp" line="80"/>
-        <source>Settings</source>
-        <oldsource>Settinsg</oldsource>
-        <translation type="unfinished">设置</translation>
+        <source>Exit</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="widget.cpp" line="81"/>
+        <location filename="widget.cpp" line="123"/>
+        <source>About</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="widget.cpp" line="82"/>
+        <source>Settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="widget.cpp" line="83"/>
         <source>Show Main Widget</source>
-        <oldsource>Show MainWidget</oldsource>
-        <translation type="unfinished">显示主窗口</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

@@ -13,7 +13,7 @@ FramelessWidgetLinux::FramelessWidgetLinux(bool p_frameless, QWidget *p_parent)
     : FramelessWidget(p_frameless, p_parent)
 {
     if (m_frameless) {
-        // installEventFilter(this);
+//         installEventFilter(this);
     }
 }
 
@@ -71,7 +71,7 @@ void FramelessWidgetLinux::mouseReleaseEvent(QMouseEvent *p_event)
     FramelessWidget::mouseReleaseEvent(p_event);
 
     if (m_frameless) {
-        // setCursor(Qt::ArrowCursor);
+         setCursor(Qt::ArrowCursor);
         m_mousePressed = false;
     }
 }

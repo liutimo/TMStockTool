@@ -21,7 +21,7 @@ add_subdirectory(data)
 set(TS_FILES TimoStockTool_zh_CN.ts)
 
 file(GLOB QRC_SOURCE_FILES *.qrc)
-file(GLOB SRC *.cpp *.h framelesswidget/*.h framelesswidget/*.cpp ui/*.h ui/*.cpp )
+file(GLOB SRC *.cpp *.h framelesswidget/*.h framelesswidget/*.cpp ui/*.h ui/*.cpp *.ui)
 
 set(PROJECT_SOURCES
         widget.ui

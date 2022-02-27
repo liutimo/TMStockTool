@@ -3,12 +3,12 @@
 
 #include <QWidget>
 #include <QMap>
-
+#include "framelesswidget/framelesswidgetimpl.h"
 namespace Ui {
 class MainWidget;
 }
 
-class MainWidget : public QWidget
+class MainWidget : public FramelessWidgetImpl
 {
     Q_OBJECT
 
@@ -21,6 +21,8 @@ private:
 
     void switchToWidgetByID(int id);
 
+
+    void initTitleBar();
 private:
     Ui::MainWidget *ui;
 

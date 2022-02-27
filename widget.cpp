@@ -7,7 +7,7 @@
 #include <QDebug>
 #include <QSystemTrayIcon>
 #include <QMenu>
-#include "settingswidget.h"
+#include "mainwidget.h"
 #include "data/datasourcemanager.h"
 
 Widget::Widget(QWidget *parent)
@@ -41,6 +41,7 @@ void Widget::initUI()
     setAttribute(Qt::WA_TranslucentBackground);
 
     ui->label->setText(tr("Updated Time:"));
+    setTitleBar(new QLabel(this));
 }
 
 void Widget::initTimer()
@@ -51,7 +52,7 @@ void Widget::initTimer()
 
     connect(mTimer, &QTimer::timeout, this, [this](){
         //更新 UI 数据
-        auto datas = DataSourceManager().getRTDatas({"sz301111", "sz300750"});
+        auto datas = DataSourceManager().getRTDatas({"sz301111", "sz300750", "sz002415"});
         if (datas.size() > 0) {
             ui->labelUpdateTime->setText(QString::fromStdString(datas[0].getUpdatedTime()));
         }
@@ -66,6 +67,7 @@ void Widget::initTableView()
 {
     mDataModel = new RealTimeDataModel(this);
     ui->tableView->setModel(mDataModel);
+    ui->tableView->setAttribute(Qt::WA_TransparentForMouseEvents,true);
 }
 
 void Widget::initSystemTray()
@@ -98,15 +100,27 @@ void Widget::initSystemTray()
     });
 
     connect(actionSettings, &QAction::triggered, this, [this](){
-        if (mSettingsWidget == nullptr) {
-            mSettingsWidget = new SettingsWidget();
+        if (mMainWidget == nullptr) {
+            mMainWidget = new MainWidget();
         }
-        mSettingsWidget->show();
+        mMainWidget->show();
     });
 
     connect(actionAbout, &QAction::triggered, this, [this](){
+        //TODO: leak of memory
         QWidget* widget = new QWidget();
-        QLabel* label = new QLabel(tr("About"), widget);
+
+        class MyLabel : public QLabel {
+        public:
+            explicit MyLabel(const QString &text, QWidget *parent=nullptr) :
+                QLabel(text, parent) {
+
+            }
+            ~MyLabel() {
+                qDebug() << "~MyLable()";
+            }
+        };
+        MyLabel* label = new MyLabel(tr("About"), widget);
         widget->show();
     });
 

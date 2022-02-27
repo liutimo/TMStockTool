@@ -43,11 +43,12 @@ QVariant RealTimeDataModel::data(const QModelIndex &index, int role) const
             return gbkStdString2QString(rtData.getName());
 #endif
         } else if (col == 2) {
-            return QString("%1").arg(rtData.getIncQuota(), 0, 'f', 2);
+            return QString("%1").arg(rtData.getNow(), 0, 'f', 2);
         } else if (col == 3) {
             auto rate = rtData.getIncRate();
-            QString formatStr = rate >= 0 ? "+%1%" : "%1%";
-            return QVariant(formatStr.arg(rate, 0, 'f', 2));
+            auto incQuota = rtData.getIncQuota();
+            QString formatStr = rate >= 0 ? "%1 (+%2%)" : "%1 (%2%)";
+            return QVariant(formatStr.arg(incQuota, 0, 'f', 2).arg(rate, 0, 'f', 2));
         }
     } else if (role == Qt::ForegroundRole) {
         if (col == 3 || col == 2) {

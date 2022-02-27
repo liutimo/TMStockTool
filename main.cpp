@@ -1,4 +1,5 @@
 #include "widget.h"
+#include "mainwidget.h"
 
 #include <QApplication>
 #include <QLocale>
@@ -18,7 +19,7 @@ int main(int argc, char *argv[])
         }
     }
 
-    Widget w;
+    MainWidget w;
     w.show();
     return a.exec();
 }

@@ -5,12 +5,13 @@
 #include <QLabel>
 
 MainWidget::MainWidget(QWidget *parent) :
-    QWidget(parent),
+    FramelessWidgetImpl(true, parent),
     ui(new Ui::MainWidget), mCurrentWidget(nullptr)
 {
     ui->setupUi(this);
 
     initUI();
+    initTitleBar();
 }
 
 MainWidget::~MainWidget()
@@ -31,19 +32,27 @@ void MainWidget::switchToWidgetByID(int id)
     if (!mWidgets.contains(id)) {
         return;
     }
-    layout()->addWidget(mWidgets[id]);
+    ui->hLayout->addWidget(mWidgets[id]);
     mWidgets[id]->show();
 
     if (mCurrentWidget && mCurrentWidget != mWidgets[id]) {
-        layout()->removeWidget(mCurrentWidget);
+        ui->hLayout->removeWidget(mCurrentWidget);
         mCurrentWidget->hide();
     }
 
     mCurrentWidget = mWidgets[id];
 }
 
+void MainWidget::initTitleBar()
+{
+//    setTitleBar(new QLabel("", this));
+    setTitleBar(this);
+}
+
 void MainWidget::initUI()
 {
+
+
     //1. Stock Widget
     int defaultId = addNavItem("Stock", new StockWidget());
     ui->navPanel->setCheckNavItemByID(defaultId);
