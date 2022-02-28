@@ -196,6 +196,24 @@
     </message>
 </context>
 <context>
+    <name>StockTableView</name>
+    <message>
+        <location filename="ui/stocktableview.cpp" line="40"/>
+        <source>Edit</source>
+        <translation type="unfinished">编辑</translation>
+    </message>
+    <message>
+        <location filename="ui/stocktableview.cpp" line="41"/>
+        <source>Delete</source>
+        <translation type="unfinished">删除</translation>
+    </message>
+    <message>
+        <location filename="ui/stocktableview.cpp" line="42"/>
+        <source>More Info</source>
+        <translation type="unfinished">更多信息</translation>
+    </message>
+</context>
+<context>
     <name>StockWidget</name>
     <message>
         <location filename="stockwidget.ui" line="14"/>
@@ -211,30 +229,30 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="43"/>
+        <location filename="widget.cpp" line="44"/>
         <source>Updated Time:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">更新时间：</translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="80"/>
+        <location filename="widget.cpp" line="88"/>
         <source>Exit</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">退出</translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="81"/>
-        <location filename="widget.cpp" line="123"/>
+        <location filename="widget.cpp" line="89"/>
+        <location filename="widget.cpp" line="131"/>
         <source>About</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">关于</translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="82"/>
+        <location filename="widget.cpp" line="90"/>
         <source>Settings</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">设置</translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="83"/>
+        <location filename="widget.cpp" line="91"/>
         <source>Show Main Widget</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">显示主窗口</translation>
     </message>
 </context>
 </TS>

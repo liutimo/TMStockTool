@@ -7,6 +7,7 @@
 #include <QDebug>
 #include <QSystemTrayIcon>
 #include <QMenu>
+#include <QMenu>
 #include "mainwidget.h"
 #include "data/datasourcemanager.h"
 
@@ -37,11 +38,14 @@ Widget::~Widget()
 
 void Widget::initUI()
 {
-    setWindowFlags(Qt::FramelessWindowHint | Qt::WindowStaysOnTopHint/* | Qt::Tool*/);
+    setWindowFlags(Qt::FramelessWindowHint | Qt::WindowStaysOnTopHint | Qt::Tool);
     setAttribute(Qt::WA_TranslucentBackground);
 
     ui->label->setText(tr("Updated Time:"));
+
+#ifdef USB_FRAMELESS_WIDGET
     setTitleBar(new QLabel(this));
+#endif
 }
 
 void Widget::initTimer()
@@ -52,7 +56,11 @@ void Widget::initTimer()
 
     connect(mTimer, &QTimer::timeout, this, [this](){
         //更新 UI 数据
-        auto datas = DataSourceManager().getRTDatas({"sz301111", "sz300750", "sz002415"});
+        auto datas = DataSourceManager().getRTDatas(
+                    {
+                        "sh603071", "sz301217", "sz605398", "sh600588",
+                        "sh603198", "sz301207", "sz000498", "sh600009"
+                    });
         if (datas.size() > 0) {
             ui->labelUpdateTime->setText(QString::fromStdString(datas[0].getUpdatedTime()));
         }
@@ -67,7 +75,7 @@ void Widget::initTableView()
 {
     mDataModel = new RealTimeDataModel(this);
     ui->tableView->setModel(mDataModel);
-    ui->tableView->setAttribute(Qt::WA_TransparentForMouseEvents,true);
+//    ui->tableView->setAttribute(Qt::WA_TransparentForMouseEvents,true);
 }
 
 void Widget::initSystemTray()

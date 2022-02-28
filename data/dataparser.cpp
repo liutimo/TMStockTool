@@ -10,7 +10,7 @@
 static void trim_left(std::string &str) {
   str.erase(std::begin(str),
             std::find_if(std::begin(str), std::end(str),
-#ifdef win32
+#ifdef WIN32
                          [](int ch) { return !std::isspace(ch, std::locale()); }));
 #else
                          [](int ch) { return ch != (int)' '; }));
@@ -20,7 +20,7 @@ static void trim_left(std::string &str) {
 static void trim_right(std::string &str) {
   str.erase(std::find_if(str.rbegin(), str.rend(),
 
-#ifdef win32
+#ifdef WIN32
                          [](int ch) { return !std::isspace(ch, std::locale("")); }
 #else
                          [](int ch) { return ch != (int)' '; }

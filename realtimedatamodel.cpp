@@ -1,7 +1,12 @@
 #include "realtimedatamodel.h"
 #include <QColor>
-#include <QTextCodec>
 #include "utility.h"
+
+#ifdef Q_OS_WIN
+
+#else
+#include <QTextCodec>
+#endif
 
 RealTimeDataModel::RealTimeDataModel(QObject *parent)
     : QAbstractTableModel{parent}
@@ -51,13 +56,13 @@ QVariant RealTimeDataModel::data(const QModelIndex &index, int role) const
             return QVariant(formatStr.arg(incQuota, 0, 'f', 2).arg(rate, 0, 'f', 2));
         }
     } else if (role == Qt::ForegroundRole) {
-        if (col == 3 || col == 2) {
-            if (rtData.getIncRate() > 0.0f) {
-                return QColor::fromRgb(255, 0, 0);
-            } else {
-                return QColor::fromRgb(0, 255, 0);
-            }
-        }
+//        if (col == 3 || col == 2) {
+//            if (rtData.getIncRate() > 0.0f) {
+//                return QColor::fromRgb(255, 0, 0);
+//            } else {
+//                return QColor::fromRgb(0, 255, 0);
+//            }
+//        }
     }
 
     return QVariant();

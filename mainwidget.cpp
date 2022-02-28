@@ -5,7 +5,11 @@
 #include <QLabel>
 
 MainWidget::MainWidget(QWidget *parent) :
+#ifdef USB_FRAMELESS_WIDGET
     FramelessWidgetImpl(true, parent),
+#else
+    FramelessWidgetImpl(parent),
+#endif
     ui(new Ui::MainWidget), mCurrentWidget(nullptr)
 {
     ui->setupUi(this);
@@ -46,7 +50,10 @@ void MainWidget::switchToWidgetByID(int id)
 void MainWidget::initTitleBar()
 {
 //    setTitleBar(new QLabel("", this));
+
+#ifdef USB_FRAMELESS_WIDGET
     setTitleBar(this);
+#endif
 }
 
 void MainWidget::initUI()

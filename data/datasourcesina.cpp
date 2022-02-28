@@ -48,7 +48,7 @@ std::string DataSourceSina::getBatchRealtimeData(const std::vector<std::string>&
     request.headers().add(U("Referer"), U("https://finance.sina.com.cn"));
     request.set_request_uri(builder.to_string());
     auto response = client.request(request).get();
-#ifdef win32
+#ifdef WIN32
     return response.extract_utf8string(true).get();
 #else
     return response.extract_string(true).get();

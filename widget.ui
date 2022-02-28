@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>505</width>
-    <height>184</height>
+    <height>298</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -61,76 +61,24 @@
     </layout>
    </item>
    <item>
-    <widget class="QTableView" name="tableView">
-     <property name="focusPolicy">
-      <enum>Qt::NoFocus</enum>
-     </property>
+    <widget class="StockTableView" name="tableView">
      <property name="styleSheet">
-      <string notr="true">background-color: rgba(255, 255, 255, 0);
+      <string notr="true">QTableView{
+background-color: rgba(255, 255, 255, 0);
 border: none;
-</string>
+}</string>
      </property>
-     <property name="verticalScrollBarPolicy">
-      <enum>Qt::ScrollBarAlwaysOff</enum>
-     </property>
-     <property name="horizontalScrollBarPolicy">
-      <enum>Qt::ScrollBarAlwaysOff</enum>
-     </property>
-     <property name="sizeAdjustPolicy">
-      <enum>QAbstractScrollArea::AdjustToContents</enum>
-     </property>
-     <property name="autoScroll">
-      <bool>false</bool>
-     </property>
-     <property name="editTriggers">
-      <set>QAbstractItemView::NoEditTriggers</set>
-     </property>
-     <property name="tabKeyNavigation">
-      <bool>false</bool>
-     </property>
-     <property name="showDropIndicator" stdset="0">
-      <bool>false</bool>
-     </property>
-     <property name="dragDropOverwriteMode">
-      <bool>false</bool>
-     </property>
-     <property name="selectionMode">
-      <enum>QAbstractItemView::NoSelection</enum>
-     </property>
-     <property name="selectionBehavior">
-      <enum>QAbstractItemView::SelectRows</enum>
-     </property>
-     <property name="textElideMode">
-      <enum>Qt::ElideNone</enum>
-     </property>
-     <property name="showGrid">
-      <bool>false</bool>
-     </property>
-     <property name="gridStyle">
-      <enum>Qt::NoPen</enum>
-     </property>
-     <attribute name="horizontalHeaderVisible">
-      <bool>false</bool>
-     </attribute>
-     <attribute name="horizontalHeaderCascadingSectionResizes">
-      <bool>true</bool>
-     </attribute>
-     <attribute name="horizontalHeaderHighlightSections">
-      <bool>false</bool>
-     </attribute>
-     <attribute name="horizontalHeaderStretchLastSection">
-      <bool>true</bool>
-     </attribute>
-     <attribute name="verticalHeaderVisible">
-      <bool>false</bool>
-     </attribute>
-     <attribute name="verticalHeaderHighlightSections">
-      <bool>false</bool>
-     </attribute>
     </widget>
    </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>StockTableView</class>
+   <extends>QTableView</extends>
+   <header>ui/stocktableview.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>
