@@ -10,6 +10,7 @@ QT_END_NAMESPACE
 class RealTimeDataModel;
 class QSystemTrayIcon;
 class MainWidget;
+class AboutWidget;
 
 class Widget : public FramelessWidgetImpl
 {
@@ -35,5 +36,6 @@ private:
     RealTimeDataModel *mDataModel = nullptr;
     QSystemTrayIcon *mSystemTray = nullptr;
     MainWidget* mMainWidget = nullptr;
+    AboutWidget* mAboutWidget = nullptr;
 };
 #endif // WIDGET_H

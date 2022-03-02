@@ -1,7 +1,8 @@
 #include "framelesswidget.h"
 
 #include <QEvent>
-
+#include <QPushButton>
+#include <QResizeEvent>
 
 FramelessWidget::FramelessWidget(bool p_frameless, QWidget *p_parent)
     : QWidget(p_parent),

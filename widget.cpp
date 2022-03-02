@@ -9,6 +9,7 @@
 #include <QMenu>
 #include <QMenu>
 #include "mainwidget.h"
+#include "aboutwidget.h"
 #include "data/datasourcemanager.h"
 
 Widget::Widget(QWidget *parent)
@@ -58,8 +59,9 @@ void Widget::initTimer()
         //更新 UI 数据
         auto datas = DataSourceManager().getRTDatas(
                     {
-                        "sh603071", "sz301217", "sz605398", "sh600588",
-                        "sh603198", "sz301207", "sz000498", "sh600009"
+                        "sh603396", "sz301217", "sz605398", "sh600588",
+                        "sh603198", "sz301207", "sz000498", "sh600009",
+                        "sz000815", "sz300738", "sz002805"
                     });
         if (datas.size() > 0) {
             ui->labelUpdateTime->setText(QString::fromStdString(datas[0].getUpdatedTime()));
@@ -115,21 +117,10 @@ void Widget::initSystemTray()
     });
 
     connect(actionAbout, &QAction::triggered, this, [this](){
-        //TODO: leak of memory
-        QWidget* widget = new QWidget();
-
-        class MyLabel : public QLabel {
-        public:
-            explicit MyLabel(const QString &text, QWidget *parent=nullptr) :
-                QLabel(text, parent) {
-
-            }
-            ~MyLabel() {
-                qDebug() << "~MyLable()";
-            }
-        };
-        MyLabel* label = new MyLabel(tr("About"), widget);
-        widget->show();
+        if (mAboutWidget == nullptr) {
+            mAboutWidget = new AboutWidget();
+        }
+        mAboutWidget->show();
     });
 
     connect(actionExit, &QAction::triggered, this, [this]() {

@@ -2,6 +2,30 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="zh_CN">
 <context>
+    <name>AboutWidget</name>
+    <message>
+        <location filename="aboutwidget.ui" line="19"/>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="aboutwidget.ui" line="75"/>
+        <source>TimoStockTool 1.0.0</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="aboutwidget.ui" line="90"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;一款桌面盯盘小工具！&lt;/p&gt;&lt;p&gt;股票数据源来自&lt;a href=&quot;https://finance.sina.com.cn/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;新浪财经&lt;/span&gt;&lt;/a&gt;。&lt;/p&gt;&lt;p&gt;图片资源文件来自&lt;a href=&quot;https://www.iconfont.cn/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;iconfont&lt;/span&gt;&lt;/a&gt;。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <oldsource>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;一款桌面盯盘小工具！&lt;/p&gt;&lt;p&gt;股票数据源来自&lt;a href=&quot;https://finance.sina.com.cn/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;新浪财经&lt;/span&gt;&lt;/a&gt;。&lt;/p&gt;&lt;p&gt;图片资源文件来自&lt;a href=&quot;https://www.iconfont.cn/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;iconfont&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</oldsource>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="aboutwidget.ui" line="108"/>
+        <source>股市有风险，入市需谨慎; 划水不利于老板，需节制。</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>HotTestWidget</name>
     <message>
         <location filename="QHotkey/HotkeyTest/hottestwidget.ui" line="14"/>
@@ -229,28 +253,27 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="44"/>
+        <location filename="widget.cpp" line="45"/>
         <source>Updated Time:</source>
         <translation type="unfinished">更新时间：</translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="88"/>
+        <location filename="widget.cpp" line="90"/>
         <source>Exit</source>
         <translation type="unfinished">退出</translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="89"/>
-        <location filename="widget.cpp" line="131"/>
+        <location filename="widget.cpp" line="91"/>
         <source>About</source>
         <translation type="unfinished">关于</translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="90"/>
+        <location filename="widget.cpp" line="92"/>
         <source>Settings</source>
         <translation type="unfinished">设置</translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="91"/>
+        <location filename="widget.cpp" line="93"/>
         <source>Show Main Widget</source>
         <translation type="unfinished">显示主窗口</translation>
     </message>

@@ -16,7 +16,6 @@ public:
     bool isFrameless() const;
 
     virtual void setTitleBar(QWidget *p_titleBar);
-
 signals:
     void windowStateChanged(Qt::WindowStates p_state);
 
@@ -32,11 +31,12 @@ protected:
 
     bool m_movable = true;
 
-    bool m_resizable = true;
+    bool m_resizable = false;
 
     const Qt::WindowFlags m_defaultFlags;
 
     QWidget *m_titleBar = nullptr;
+
 
     Qt::WindowStates m_windowStates = Qt::WindowNoState;
 };
