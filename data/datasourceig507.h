@@ -1,13 +1,13 @@
-#ifndef DATASOURCESINA_H
-#define DATASOURCESINA_H
+#ifndef DATASOURCEIG507_H
+#define DATASOURCEIG507_H
 
+#include "data.h"
 #include "datasource.h"
-#include <cpprest/http_client.h>
 
-class DataSourceSina : public DataSource
+class DataSourceIG507 : public DataSource
 {
 public:
-    DataSourceSina();
+    DataSourceIG507();
 
     std::string getRealtimeData(const std::string &code) override;
 
@@ -15,7 +15,8 @@ public:
 
     std::string getAllBigAStock() override;
 private:
-    web::json::value REQUEST_PARAM;
+    static const std::string LICENCE;
+    static const std::string BASE_URI;
 };
 
-#endif // DATASOURCESINA_H
+#endif // DATASOURCEIG507_H

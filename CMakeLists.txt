@@ -17,6 +17,7 @@ else()
     find_package(Qt6 COMPONENTS Core5Compat REQUIRED)
 endif()
 
+find_package(Qt6 COMPONENTS Sql REQUIRED)
 find_package(cpprestsdk CONFIG REQUIRED)
 find_package(QT NAMES Qt6 Qt5 COMPONENTS Widgets LinguistTools REQUIRED)
 find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Widgets LinguistTools REQUIRED)
@@ -64,9 +65,9 @@ else()
 endif()
 
 if (WIN32)
-target_link_libraries(TimoStockTool PRIVATE Qt${QT_VERSION_MAJOR}::Widgets datasource qhotkey)
+target_link_libraries(TimoStockTool PRIVATE Qt${QT_VERSION_MAJOR}::Widgets datasource qhotkey Qt6::Sql)
 else()
-target_link_libraries(TimoStockTool PRIVATE Qt${QT_VERSION_MAJOR}::Widgets datasource qhotkey Qt6::Core5Compat)
+target_link_libraries(TimoStockTool PRIVATE Qt${QT_VERSION_MAJOR}::Widgets datasource qhotkey Qt6::Core5Compat Qt6::Sql)
 endif()
 
 set_target_properties(TimoStockTool PROPERTIES

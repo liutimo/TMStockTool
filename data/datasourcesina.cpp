@@ -54,3 +54,8 @@ std::string DataSourceSina::getBatchRealtimeData(const std::vector<std::string>&
     return response.extract_string(true).get();
 #endif
 }
+
+std::string DataSourceSina::getAllBigAStock()
+{
+    return "";
+}

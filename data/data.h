@@ -4,7 +4,36 @@
 #include <string>
 #include <vector>
 
-class RTData {
+
+class StockBase {
+public:
+    StockBase() {}
+
+    StockBase(const std::string &code, const std::string &name);
+
+    StockBase(const StockBase&);
+    StockBase(const StockBase&&);
+    virtual StockBase &operator=(const StockBase&);
+    virtual StockBase &operator=(const StockBase&&);
+
+    void setCode(const std::string& code);
+    const std::string & getCode() const;
+
+    void setName(const std::string& name);
+    const std::string & getName() const;
+
+    bool isValid() const {
+        return !mName.empty();
+    }
+
+    virtual std::string toString() const;
+protected:
+    std::string mCode;
+    std::string mName;
+};
+
+
+class RTData : public StockBase{
 
 public:
     RTData() = default;
@@ -13,12 +42,11 @@ public:
            float topen, float yclose, float now, const std::string &updatedTime = "");
 
     RTData(const RTData&);
+    RTData(const RTData&&);
 
-    const std::string &getCode() const;
-    void setCode(const std::string &code);
+   virtual RTData &operator=(const RTData&);
+   virtual RTData &operator=(const RTData&&);
 
-    const std::string &getName() const;
-    void setName(const std::string &name);
 
     void setTOpen(float topen);
 
@@ -27,9 +55,7 @@ public:
     float getNow() const;
     void setNow(float now);
 
-    bool isValid() const {
-        return !mName.empty();
-    }
+
 
     float getIncRate() const;
 
@@ -40,8 +66,6 @@ public:
     void setUpdatedTime(const std::string &updatedTime);
 
 private:
-    std::string mCode;
-    std::string mName;
     float mTOpen;
     float mYClose;
     float mNow;

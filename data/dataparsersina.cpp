@@ -11,7 +11,7 @@ DataParserSina::DataParserSina()
  * @param originData
  * @return
  */
-RTData DataParserSina::parserRTData(const std::string &originData)
+RTData DataParserSina::parseRTData(const std::string &originData)
 {
 
     std::smatch m;
@@ -36,15 +36,21 @@ RTData DataParserSina::parserRTData(const std::string &originData)
     return {};
 }
 
-std::vector<RTData> DataParserSina::parserRTDatas(const std::string &originData)
+std::vector<RTData> DataParserSina::parseRTDatas(const std::string &originData)
 {
     std::vector<RTData> res;
     auto array = split(originData, "\n");
     for (const auto &str : array) {
-        RTData rtData = parserRTData(str);
+        RTData rtData = parseRTData(str);
         if (rtData.isValid()) {
             res.emplace_back(rtData);
         }
     }
     return res;
+}
+
+
+std::vector<StockBase> DataParserSina::parseAllBigAStock(const std::string &originData)
+{
+    return{};
 }

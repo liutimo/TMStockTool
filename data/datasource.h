@@ -9,6 +9,8 @@ public:
     virtual std::string getRealtimeData(const std::string& code) = 0;
 
     virtual std::string getBatchRealtimeData(const std::vector<std::string>& codes) = 0;
+
+    virtual std::string getAllBigAStock() = 0;
 };
 
 #endif // DATASOURCE_H

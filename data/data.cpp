@@ -1,41 +1,115 @@
 #include "data.h"
 
-
-RTData::RTData(const std::string &code, const std::string &name, float topen, float yclose, float now, const std::string &updatedTime) :
-    mCode(code), mName(name), mTOpen(topen), mYClose(yclose), mNow(now), mUpdatedTime(updatedTime)
+//////StockBase
+StockBase::StockBase(const std::string &code, const std::string &name)
+    : mCode(code), mName(name)
 {
 
 }
 
-
-RTData::RTData(const RTData &rtData)
+StockBase::StockBase(const StockBase &other)
 {
-    mCode = rtData.mCode;
-    mName = rtData.mName;
-    mTOpen = rtData.mTOpen;
-    mYClose = rtData.mYClose;
-    mNow = rtData.mNow;
-    mUpdatedTime = rtData.mUpdatedTime;
+    if (this != &other) {
+        mCode = other.mCode;
+        mName = other.mName;
+    }
 }
 
-const std::string &RTData::getCode() const
+StockBase::StockBase(const StockBase &&other)
 {
-    return mCode;
+    if (this != &other) {
+        mCode = std::move(other.mCode);
+        mName = std::move(other.mName);
+    }
 }
 
-void RTData::setCode(const std::string &code)
+StockBase &StockBase::operator=(const StockBase &other)
+{
+    if (this != &other) {
+        mCode = other.mCode;
+        mName = other.mName;
+    }
+    return *this;
+}
+
+
+StockBase &StockBase::operator=(const StockBase &&other)
+{
+    if (this != &other) {
+        mCode = std::move(other.mCode);
+        mName = std::move(other.mName);
+    }
+    return *this;
+}
+
+void StockBase::setCode(const std::string& code)
 {
     mCode = code;
 }
 
-const std::string &RTData::getName() const
+const std::string& StockBase::getCode() const
+{
+    return mCode;
+}
+
+void StockBase::setName(const std::string& name)
+{
+    mName = name;
+}
+
+const std::string & StockBase::getName() const
 {
     return mName;
 }
 
-void RTData::setName(const std::string &name)
+std::string StockBase::toString() const
 {
-    mName = name;
+    return "StockBase: { Name: " + mName + " Code:" + mCode + "}";
+}
+
+/////RTData
+RTData::RTData(const std::string &code, const std::string &name, float topen, float yclose, float now, const std::string &updatedTime) :
+    StockBase(code, name), mTOpen(topen), mYClose(yclose), mNow(now), mUpdatedTime(updatedTime)
+{
+
+}
+
+
+RTData::RTData(const RTData &other) : StockBase(other)
+{
+    mTOpen = other.mTOpen;
+    mYClose = other.mYClose;
+    mNow = other.mNow;
+    mUpdatedTime = other.mUpdatedTime;
+}
+
+
+RTData::RTData(const RTData &&other) : StockBase(other)
+{
+    mTOpen = std::move(other.mTOpen);
+    mYClose = std::move(other.mYClose);
+    mNow = std::move(other.mNow);
+    mUpdatedTime = std::move(other.mUpdatedTime);
+}
+
+RTData& RTData::operator=(const RTData &other)
+{
+    StockBase::operator=(other);
+    mTOpen = other.mTOpen;
+    mYClose = other.mYClose;
+    mNow = other.mNow;
+    mUpdatedTime = other.mUpdatedTime;
+    return *this;
+}
+
+RTData& RTData::operator=(const RTData &&other)
+{
+    StockBase::operator=(other);
+    mTOpen = std::move(other.mTOpen);
+    mYClose = std::move(other.mYClose);
+    mNow = std::move(other.mNow);
+    mUpdatedTime = std::move(other.mUpdatedTime);
+    return *this;
 }
 
 void RTData::setTOpen(float topen)
@@ -77,3 +151,4 @@ void RTData::setUpdatedTime(const std::string &updatedTime)
 {
     mUpdatedTime = updatedTime;
 }
+

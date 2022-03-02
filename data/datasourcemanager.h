@@ -18,6 +18,13 @@ public:
     virtual RTData getRTData(const std::string& code) = 0;
 
     virtual std::vector<RTData> getRTDatas(const std::vector<std::string> &codes) = 0;
+
+    /**
+     * @brief getAllBigAStock 获取大A市场上的所有股票
+     * @return
+     * 目前仅返回包含股票名称和股票代码的StockBase vecotr。
+     */
+    virtual std::vector<StockBase> getAllBigAStock() = 0;
 };
 
 
@@ -35,6 +42,7 @@ public:
 
     std::vector<RTData> getRTDatas(const std::vector<std::string> &codes) override;
 
+    virtual std::vector<StockBase> getAllBigAStock() override;
 private:
     DataSourceType mDataSourceType;
 

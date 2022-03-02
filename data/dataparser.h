@@ -9,9 +9,12 @@ class DataParser {
 public:
     virtual ~DataParser() {}
 
-    virtual RTData parserRTData(const std::string &originData) = 0;
 
-    virtual std::vector<RTData> parserRTDatas(const std::string& originData) = 0;
+    virtual RTData parseRTData(const std::string &originData) = 0;
+
+    virtual std::vector<RTData> parseRTDatas(const std::string& originData) = 0;
+
+    virtual std::vector<StockBase> parseAllBigAStock(const std::string& originData) = 0;
 };
 
 
