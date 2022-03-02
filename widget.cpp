@@ -11,6 +11,7 @@
 #include "mainwidget.h"
 #include "aboutwidget.h"
 #include "data/datasourcemanager.h"
+#include "db/persistentdatadb.h"
 
 Widget::Widget(QWidget *parent)
 #ifdef USB_FRAMELESS_WIDGET
@@ -55,14 +56,15 @@ void Widget::initTimer()
     //TODO: 修改为可动态配置
     mTimer->setInterval(1000);
 
-    connect(mTimer, &QTimer::timeout, this, [this](){
+    std::vector<std::string> stocks;
+    auto qstocks = PersistentDataDB::instance().getFollowStockList();
+    for (auto const & stock : qstocks) {
+        stocks.push_back(stock.toStdString());
+    }
+
+    connect(mTimer, &QTimer::timeout, this, [this, stocks](){
         //更新 UI 数据
-        auto datas = DataSourceManager().getRTDatas(
-                    {
-                        "sh603396", "sz301217", "sz605398", "sh600588",
-                        "sh603198", "sz301207", "sz000498", "sh600009",
-                        "sz000815", "sz300738", "sz002805"
-                    });
+        auto datas = DataSourceManager().getRTDatas(stocks);
         if (datas.size() > 0) {
             ui->labelUpdateTime->setText(QString::fromStdString(datas[0].getUpdatedTime()));
         }
