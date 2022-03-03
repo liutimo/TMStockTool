@@ -26,9 +26,12 @@ public:
 
     float getCostPrice(const QString &code) const override;
 
-    bool setFollowStockInfo(const QString& code, float costPirce, int holdCount) const override;
+    bool setFollowStockInfo(const QString& code, float costPirce = 0.0f, int holdCount = 0) const override;
 
     QVector<QString> getFollowStockList() const override;
+
+
+    bool deleteOneFollowStock(const QString& code) const override;
 
 private:
     QSqlDatabase* mDb;

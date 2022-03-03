@@ -222,17 +222,17 @@
 <context>
     <name>StockTableView</name>
     <message>
-        <location filename="ui/stocktableview.cpp" line="40"/>
+        <location filename="ui/stocktableview.cpp" line="46"/>
         <source>Edit</source>
         <translation type="unfinished">编辑</translation>
     </message>
     <message>
-        <location filename="ui/stocktableview.cpp" line="41"/>
+        <location filename="ui/stocktableview.cpp" line="47"/>
         <source>Delete</source>
         <translation type="unfinished">删除</translation>
     </message>
     <message>
-        <location filename="ui/stocktableview.cpp" line="42"/>
+        <location filename="ui/stocktableview.cpp" line="48"/>
         <source>More Info</source>
         <translation type="unfinished">更多信息</translation>
     </message>
@@ -244,6 +244,44 @@
         <source>Form</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="stockwidget.ui" line="25"/>
+        <source>Follow</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>TMTitleBar</name>
+    <message>
+        <location filename="ui/tmtitlebar.ui" line="14"/>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="ui/tmtitlebar.ui" line="34"/>
+        <source>ICON</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="ui/tmtitlebar.ui" line="41"/>
+        <source>TitleTitleTitleTitleTitle</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="ui/tmtitlebar.ui" line="63"/>
+        <source>MIN</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="ui/tmtitlebar.ui" line="70"/>
+        <source>MAX</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="ui/tmtitlebar.ui" line="77"/>
+        <source>CLOSE</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>
@@ -253,27 +291,27 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="45"/>
+        <location filename="widget.cpp" line="46"/>
         <source>Updated Time:</source>
         <translation type="unfinished">更新时间：</translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="90"/>
+        <location filename="widget.cpp" line="86"/>
         <source>Exit</source>
         <translation type="unfinished">退出</translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="91"/>
+        <location filename="widget.cpp" line="87"/>
         <source>About</source>
         <translation type="unfinished">关于</translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="92"/>
+        <location filename="widget.cpp" line="88"/>
         <source>Settings</source>
         <translation type="unfinished">设置</translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="93"/>
+        <location filename="widget.cpp" line="89"/>
         <source>Show Main Widget</source>
         <translation type="unfinished">显示主窗口</translation>
     </message>

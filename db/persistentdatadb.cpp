@@ -43,6 +43,8 @@ int PersistentDataDB::getHoldCount(const QString &code) const
         if (query.next()) {
             return query.value("hold_count").toInt();
         }
+    } else {
+        qDebug() << query.lastError().text();
     }
 
     return -1;
@@ -61,6 +63,8 @@ float PersistentDataDB::getCostPrice(const QString &code) const
         if (query.next()) {
             return query.value("cost_price").toFloat();
         }
+    } else {
+        qDebug() << query.lastError().text();
     }
 
     //FIX COST PRICE CAN BE 0?
@@ -74,12 +78,14 @@ bool PersistentDataDB::setFollowStockInfo(const QString &code, float costPirce, 
     QSqlQuery query;
     if (query.prepare(sqlSetFollowStockInfo)) {
         query.addBindValue(code);
-        query.addBindValue(costPirce);
         query.addBindValue(holdCount);
+        query.addBindValue(QString("%1").arg(costPirce, 0, 'f', 2));
     }
 
     if (query.exec()) {
         return true;
+    } else {
+        qDebug() << query.lastError().text();
     }
     qDebug() << query.lastError().text();
     return false;
@@ -87,7 +93,7 @@ bool PersistentDataDB::setFollowStockInfo(const QString &code, float costPirce, 
 
 QVector<QString> PersistentDataDB::getFollowStockList() const
 {
-    QString sqlGetHoldCount = "select code from follow_stocks";
+    QString sqlGetHoldCount = "select code from follow_stocks where status=1";
 
     QSqlQuery query;
     if (query.exec(sqlGetHoldCount)) {
@@ -96,7 +102,23 @@ QVector<QString> PersistentDataDB::getFollowStockList() const
             result.emplace_back(query.value("code").toString());
         }
         return result;
+    } else {
+        qDebug() << query.lastError().text();
     }
 
     return {};
+}
+
+bool PersistentDataDB::deleteOneFollowStock(const QString &code) const
+{
+    QString sqlUpdateStatus = "update follow_stocks SET status = ? where code = ?";
+
+    QSqlQuery query;
+    if (query.prepare(sqlUpdateStatus)) {
+        query.addBindValue(0);
+        query.addBindValue(code);
+    } else {
+        qDebug() << query.lastError().text();
+    }
+    return query.exec();
 }

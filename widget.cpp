@@ -44,10 +44,6 @@ void Widget::initUI()
     setAttribute(Qt::WA_TranslucentBackground);
 
     ui->label->setText(tr("Updated Time:"));
-
-#ifdef USB_FRAMELESS_WIDGET
-    setTitleBar(new QLabel(this));
-#endif
 }
 
 void Widget::initTimer()
@@ -55,21 +51,19 @@ void Widget::initTimer()
     mTimer = new QTimer(this);
     //TODO: 修改为可动态配置
     mTimer->setInterval(1000);
-
-    std::vector<std::string> stocks;
-    auto qstocks = PersistentDataDB::instance().getFollowStockList();
-    for (auto const & stock : qstocks) {
-        stocks.push_back(stock.toStdString());
-    }
-
-    connect(mTimer, &QTimer::timeout, this, [this, stocks](){
+    connect(mTimer, &QTimer::timeout, this, [this](){
         //更新 UI 数据
+        std::vector<std::string> stocks;
+        auto qstocks = PersistentDataDB::instance().getFollowStockList();
+        for (auto const & stock : qstocks) {
+            stocks.push_back(stock.toStdString());
+        }
+
         auto datas = DataSourceManager().getRTDatas(stocks);
         if (datas.size() > 0) {
             ui->labelUpdateTime->setText(QString::fromStdString(datas[0].getUpdatedTime()));
+            mDataModel->setData(datas);
         }
-        mDataModel->setData(datas);
-        qDebug() << "Data Updated";
     });
 
     mTimer->start();

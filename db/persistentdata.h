@@ -17,6 +17,8 @@ public:
     virtual bool setFollowStockInfo(const QString& code, float costPirce, int holdCount) const = 0;
 
     virtual QVector<QString> getFollowStockList() const = 0;
+
+    virtual bool deleteOneFollowStock(const QString& code) const = 0;
 };
 
 #endif // PERSISTENTDATA_H

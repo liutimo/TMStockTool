@@ -37,7 +37,6 @@ protected:
 
     QWidget *m_titleBar = nullptr;
 
-
     Qt::WindowStates m_windowStates = Qt::WindowNoState;
 };
 

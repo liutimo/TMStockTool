@@ -3,7 +3,9 @@
 #include <QDebug>
 #include <QEvent>
 #include <QMenu>
-StockTableView::StockTableView(QWidget *parent) : QTableView(parent)
+#include "db/persistentdatadb.h"
+
+StockTableView::StockTableView(QWidget *parent, bool showMenu) : QTableView(parent)
 {
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
@@ -17,9 +19,10 @@ StockTableView::StockTableView(QWidget *parent) : QTableView(parent)
     setFocusPolicy(Qt::NoFocus);
     setContextMenuPolicy(Qt::ContextMenuPolicy::ActionsContextMenu);
 
-    installEventFilter(this);
-
-    initMenu();
+    if (showMenu) {
+        installEventFilter(this);
+        initMenu();
+    }
 }
 
 bool StockTableView::eventFilter(QObject *obj, QEvent *ev)
@@ -27,7 +30,10 @@ bool StockTableView::eventFilter(QObject *obj, QEvent *ev)
     if (obj == this) {
         if (ev->type() == QEvent::ContextMenu) {
             if (indexAt(mapFromGlobal(cursor().pos())).isValid()) {
+                mCurrentRow = indexAt(mapFromGlobal(cursor().pos())).row();
                 mContextMenu->exec(cursor().pos());
+            } else {
+                mCurrentRow = -1;
             }
         }
     }
@@ -44,10 +50,15 @@ void StockTableView::initMenu()
     connect(actionEdit, &QAction::triggered, this, [&]() {
         int row = indexAt(mapFromGlobal(cursor().pos())).row();
         //TODO: 如何将管理的数据和UI解耦呢
+
     });
 
     connect(actionDelete, &QAction::triggered, this, [&](){
-
+        if (mCurrentRow != -1) {
+            auto itemData = model()->itemData(model()->index(mCurrentRow, 0));
+            QString code = itemData[Qt::DisplayRole].toString();
+            PersistentDataDB::instance().deleteOneFollowStock(code);
+        }
     });
 
     connect(actionMore, &QAction::triggered, this, [&](){

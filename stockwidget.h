@@ -7,6 +7,7 @@ namespace Ui {
 class StockWidget;
 }
 
+#include "data/data.h"
 #include <QAbstractTableModel>
 #include <QVector>
 
@@ -24,8 +25,7 @@ public:
 
     void updateData();
 private:
-    QVector<QString> mRow1 = {"11", "12", "13", "14", "15"};
-    QVector<QString> mRow2 = {"21", "22", "23", "24", "25"};
+    std::vector<StockBase> mStocks;
 };
 
 
@@ -38,6 +38,9 @@ public:
     ~StockWidget();
 
 private:
+
+    void initFollow();
+
     Ui::StockWidget *ui;
 };
 
