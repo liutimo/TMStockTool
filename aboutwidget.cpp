@@ -6,6 +6,7 @@ AboutWidget::AboutWidget(QWidget *parent) :
     ui(new Ui::AboutWidget)
 {
     ui->setupUi(this);
+    ui->widget->setStyleSheet("backgroud-color:green;");
 }
 
 AboutWidget::~AboutWidget()

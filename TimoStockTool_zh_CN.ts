@@ -9,20 +9,27 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="aboutwidget.ui" line="75"/>
+        <location filename="aboutwidget.ui" line="105"/>
         <source>TimoStockTool 1.0.0</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="aboutwidget.ui" line="90"/>
+        <location filename="aboutwidget.ui" line="120"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;一款桌面盯盘小工具！&lt;/p&gt;&lt;p&gt;股票数据源来自&lt;a href=&quot;https://finance.sina.com.cn/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;新浪财经&lt;/span&gt;&lt;/a&gt;。&lt;/p&gt;&lt;p&gt;图片资源文件来自&lt;a href=&quot;https://www.iconfont.cn/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;iconfont&lt;/span&gt;&lt;/a&gt;。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <oldsource>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;一款桌面盯盘小工具！&lt;/p&gt;&lt;p&gt;股票数据源来自&lt;a href=&quot;https://finance.sina.com.cn/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;新浪财经&lt;/span&gt;&lt;/a&gt;。&lt;/p&gt;&lt;p&gt;图片资源文件来自&lt;a href=&quot;https://www.iconfont.cn/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;iconfont&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="aboutwidget.ui" line="108"/>
+        <location filename="aboutwidget.ui" line="138"/>
         <source>股市有风险，入市需谨慎; 划水不利于老板，需节制。</source>
         <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>FramelessWidget</name>
+    <message>
+        <source>About</source>
+        <translation type="obsolete">关于</translation>
     </message>
 </context>
 <context>
@@ -192,11 +199,6 @@
         <source>Form</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <location filename="mainwidget.ui" line="59"/>
-        <source>TextLabel</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>QHotkey</name>
@@ -244,42 +246,17 @@
         <source>Form</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <location filename="stockwidget.ui" line="25"/>
-        <source>Follow</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>TMTitleBar</name>
     <message>
-        <location filename="ui/tmtitlebar.ui" line="14"/>
+        <location filename="ui/tmtitlebar.ui" line="26"/>
         <source>Form</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ui/tmtitlebar.ui" line="34"/>
-        <source>ICON</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="ui/tmtitlebar.ui" line="41"/>
-        <source>TitleTitleTitleTitleTitle</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="ui/tmtitlebar.ui" line="63"/>
-        <source>MIN</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="ui/tmtitlebar.ui" line="70"/>
-        <source>MAX</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="ui/tmtitlebar.ui" line="77"/>
-        <source>CLOSE</source>
+        <location filename="ui/tmtitlebar.ui" line="87"/>
+        <source>关于</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

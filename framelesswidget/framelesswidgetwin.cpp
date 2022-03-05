@@ -4,7 +4,7 @@
 
 #include <QTimer>
 #include <QEvent>
-
+#include <QDebug>
 #include <windows.h>
 #include <windowsx.h>
 #include <dwmapi.h>
@@ -50,7 +50,7 @@ bool FramelessWidgetWin::nativeEvent(const QByteArray &p_eventType, void *p_mess
 
     if (p_eventType == QStringLiteral("windows_generic_MSG")) {
         MSG *msg = static_cast<MSG *>(p_message);
-
+        qDebug () << msg->message << ": " << WM_NCHITTEST;
         switch (msg->message) {
         case WM_NCCALCSIZE:
             *p_result = 0;

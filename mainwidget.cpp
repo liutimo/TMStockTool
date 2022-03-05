@@ -49,11 +49,7 @@ void MainWidget::switchToWidgetByID(int id)
 
 void MainWidget::initTitleBar()
 {
-//    setTitleBar(new QLabel("", this));
 
-#ifdef USB_FRAMELESS_WIDGET
-    setTitleBar(this);
-#endif
 }
 
 void MainWidget::initUI()

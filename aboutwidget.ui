@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>386</width>
-    <height>192</height>
+    <height>193</height>
    </rect>
   </property>
   <property name="font">
@@ -24,17 +24,47 @@ background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgb
 }</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_2">
+   <property name="spacing">
+    <number>0</number>
+   </property>
    <property name="leftMargin">
-    <number>20</number>
+    <number>0</number>
    </property>
    <property name="topMargin">
-    <number>20</number>
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
    </property>
    <property name="bottomMargin">
-    <number>20</number>
+    <number>10</number>
    </property>
    <item>
+    <widget class="TMTitleBar" name="widget" native="true">
+     <property name="styleSheet">
+      <string notr="true">QWidget#TMTitleBar{
+	background-color: rgb(85, 255, 0);
+}</string>
+     </property>
+    </widget>
+   </item>
+   <item>
     <layout class="QHBoxLayout" name="horizontalLayout">
+     <property name="spacing">
+      <number>20</number>
+     </property>
+     <property name="leftMargin">
+      <number>20</number>
+     </property>
+     <property name="topMargin">
+      <number>10</number>
+     </property>
+     <property name="rightMargin">
+      <number>20</number>
+     </property>
+     <property name="bottomMargin">
+      <number>10</number>
+     </property>
      <item>
       <widget class="QLabel" name="label">
        <property name="minimumSize">
@@ -114,6 +144,14 @@ font: 10pt &quot;Microsoft YaHei UI&quot;;</string>
    </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>TMTitleBar</class>
+   <extends>QWidget</extends>
+   <header>ui/tmtitlebar.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

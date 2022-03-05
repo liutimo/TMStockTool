@@ -6,16 +6,34 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>547</width>
-    <height>24</height>
+    <width>268</width>
+    <height>28</height>
    </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>0</width>
+    <height>28</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>16777215</width>
+    <height>30</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
   <layout class="QHBoxLayout" name="horizontalLayout_2">
    <property name="spacing">
     <number>0</number>
+   </property>
+   <property name="leftMargin">
+    <number>5</number>
    </property>
    <property name="topMargin">
     <number>0</number>
@@ -29,16 +47,44 @@
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
-      <widget class="QLabel" name="label">
+      <widget class="QLabel" name="labelIcon">
+       <property name="minimumSize">
+        <size>
+         <width>28</width>
+         <height>28</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>28</width>
+         <height>28</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-image: url(:/imgs/imgs/stock_28.png);
+border:none;</string>
+       </property>
        <property name="text">
-        <string>ICON</string>
+        <string/>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QLabel" name="label_2">
+      <widget class="QLabel" name="labelTitle">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>28</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>28</height>
+        </size>
+       </property>
        <property name="text">
-        <string>TitleTitleTitleTitleTitle</string>
+        <string>关于</string>
        </property>
       </widget>
      </item>
@@ -58,23 +104,80 @@
     </spacer>
    </item>
    <item>
-    <widget class="QPushButton" name="pushButton_3">
+    <widget class="QPushButton" name="btnMin">
+     <property name="minimumSize">
+      <size>
+       <width>28</width>
+       <height>28</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>28</width>
+       <height>28</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-image: url(:/imgs/imgs/btn_close_down.png);
+border: none;</string>
+     </property>
      <property name="text">
-      <string>MIN</string>
+      <string/>
      </property>
     </widget>
    </item>
    <item>
-    <widget class="QPushButton" name="pushButton_2">
+    <widget class="QPushButton" name="btnMax">
+     <property name="minimumSize">
+      <size>
+       <width>28</width>
+       <height>28</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>28</width>
+       <height>28</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-image: url(:/imgs/imgs/btn_close_hover.png);
+border:none;</string>
+     </property>
      <property name="text">
-      <string>MAX</string>
+      <string/>
      </property>
     </widget>
    </item>
    <item>
-    <widget class="QPushButton" name="pushButton">
+    <widget class="QPushButton" name="btnClose">
+     <property name="minimumSize">
+      <size>
+       <width>28</width>
+       <height>28</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>28</width>
+       <height>28</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+	border-image: url(:/imgs/imgs/btn_close_normal.png);
+}
+QPushButton:hover {
+	border-image: url(:/imgs/imgs/btn_close_hover.png);
+}
+QPushButton:pressed {
+	border-image: url(:/imgs/imgs/btn_close_down.png);
+}
+
+</string>
+     </property>
      <property name="text">
-      <string>CLOSE</string>
+      <string/>
      </property>
     </widget>
    </item>

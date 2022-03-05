@@ -24,8 +24,8 @@ Widget::Widget(QWidget *parent)
     ui->setupUi(this);
 
     initUI();
-    initTimer();
-    initTableView();
+//    initTimer();
+//    initTableView();
     initSystemTray();
 }
 

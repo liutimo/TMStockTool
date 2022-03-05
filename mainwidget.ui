@@ -41,24 +41,7 @@
       <enum>QLayout::SetNoConstraint</enum>
      </property>
      <item>
-      <spacer name="horizontalSpacer">
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>40</width>
-         <height>20</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-     <item>
-      <widget class="QLabel" name="close">
-       <property name="text">
-        <string>TextLabel</string>
-       </property>
-      </widget>
+      <widget class="TMTitleBar" name="widget_2" native="true"/>
      </item>
     </layout>
    </item>
@@ -82,6 +65,12 @@
   </layout>
  </widget>
  <customwidgets>
+  <customwidget>
+   <class>TMTitleBar</class>
+   <extends>QWidget</extends>
+   <header>ui/tmtitlebar.h</header>
+   <container>1</container>
+  </customwidget>
   <customwidget>
    <class>TMNavPanel</class>
    <extends>QWidget</extends>

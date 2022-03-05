@@ -29,9 +29,9 @@ set(TS_FILES TimoStockTool_zh_CN.ts)
 
 file(GLOB QRC_SOURCE_FILES *.qrc)
 file(GLOB SRC *.cpp *.h framelesswidget/*.h framelesswidget/*.cpp ui/*.h ui/*.cpp *.ui db/*.h db/*.cpp)
-
+file(GLOB UI_SRC *.ui  ui/*.ui)
 set(PROJECT_SOURCES
-        widget.ui
+        ${UI_SRC}
         ${SRC}
         ${QRC_SOURCE_FILES}
         ${TS_FILES}

@@ -5,13 +5,15 @@
 #include <QMargins>
 
 class QTimer;
+class QPushButton;
+class QLabel;
 
 // Base class. Use FramelessWidgetImpl instead.
 class FramelessWidget : public QWidget
 {
     Q_OBJECT
 public:
-    FramelessWidget(bool p_frameless, QWidget *p_parent = nullptr);
+    FramelessWidget(bool p_frameless, QWidget *p_parent = nullptr/*, bool showTitleBar = false*/);
 
     bool isFrameless() const;
 
@@ -22,6 +24,7 @@ signals:
 protected:
     void changeEvent(QEvent *p_event) Q_DECL_OVERRIDE;
 
+    void resizeEvent(QResizeEvent *event) Q_DECL_OVERRIDE;
 protected:
     bool isMaximized() const;
 
@@ -38,6 +41,15 @@ protected:
     QWidget *m_titleBar = nullptr;
 
     Qt::WindowStates m_windowStates = Qt::WindowNoState;
+
+
+private:
+//    void initTitleBar();
+
+//    QLabel *mIcon;
+//    QLabel *mTitle;
+//    QPushButton *mCloseBtn;
+
 };
 
 #endif // FRAMELESSWIDGET_H
