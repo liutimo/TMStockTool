@@ -43,6 +43,7 @@ bool StockTableView::eventFilter(QObject *obj, QEvent *ev)
 void StockTableView::initMenu()
 {
     mContextMenu = new QMenu(this);
+    auto *actionSticky = mContextMenu->addAction(tr("Sticky"));
     auto *actionEdit = mContextMenu->addAction(tr("Edit"));
     auto *actionDelete = mContextMenu->addAction(tr("Delete"));
     auto *actionMore = mContextMenu->addAction(tr("More Info"));

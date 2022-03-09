@@ -32,10 +32,6 @@ int main(int argc, char *argv[])
         return 0;
     }
 
-//    FramelessWidgetImpl w(true);
-
-//    w.show();
-
     Widget w;
     w.show();
 

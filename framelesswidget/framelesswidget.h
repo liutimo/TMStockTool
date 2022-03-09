@@ -24,7 +24,6 @@ signals:
 protected:
     void changeEvent(QEvent *p_event) Q_DECL_OVERRIDE;
 
-    void resizeEvent(QResizeEvent *event) Q_DECL_OVERRIDE;
 protected:
     bool isMaximized() const;
 

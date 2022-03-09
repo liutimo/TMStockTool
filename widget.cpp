@@ -24,8 +24,8 @@ Widget::Widget(QWidget *parent)
     ui->setupUi(this);
 
     initUI();
-//    initTimer();
-//    initTableView();
+    initTimer();
+    initTableView();
     initSystemTray();
 }
 
@@ -44,6 +44,7 @@ void Widget::initUI()
     setAttribute(Qt::WA_TranslucentBackground);
 
     ui->label->setText(tr("Updated Time:"));
+    setTitleBar(ui->label);
 }
 
 void Widget::initTimer()

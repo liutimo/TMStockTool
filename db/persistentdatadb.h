@@ -33,6 +33,7 @@ public:
 
     bool deleteOneFollowStock(const QString& code) const override;
 
+    bool stickyOneFollowStock(const QString& code, bool sticky) const override;
 private:
     QSqlDatabase* mDb;
 

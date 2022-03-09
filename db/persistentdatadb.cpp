@@ -122,3 +122,17 @@ bool PersistentDataDB::deleteOneFollowStock(const QString &code) const
     }
     return query.exec();
 }
+
+bool PersistentDataDB::stickyOneFollowStock(const QString &code, bool sticky) const
+{
+    QString sqlUpdateStatus = "update follow_stocks SET status = ? where code = ?";
+
+    QSqlQuery query;
+    if (query.prepare(sqlUpdateStatus)) {
+        query.addBindValue(sticky ? 2 : 1);
+        query.addBindValue(code);
+    } else {
+        qDebug() << query.lastError().text();
+    }
+    return query.exec();
+}

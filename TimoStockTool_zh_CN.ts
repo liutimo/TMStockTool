@@ -225,16 +225,21 @@
     <name>StockTableView</name>
     <message>
         <location filename="ui/stocktableview.cpp" line="46"/>
+        <source>Sticky</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="ui/stocktableview.cpp" line="47"/>
         <source>Edit</source>
         <translation type="unfinished">编辑</translation>
     </message>
     <message>
-        <location filename="ui/stocktableview.cpp" line="47"/>
+        <location filename="ui/stocktableview.cpp" line="48"/>
         <source>Delete</source>
         <translation type="unfinished">删除</translation>
     </message>
     <message>
-        <location filename="ui/stocktableview.cpp" line="48"/>
+        <location filename="ui/stocktableview.cpp" line="49"/>
         <source>More Info</source>
         <translation type="unfinished">更多信息</translation>
     </message>
@@ -273,22 +278,22 @@
         <translation type="unfinished">更新时间：</translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="86"/>
+        <location filename="widget.cpp" line="87"/>
         <source>Exit</source>
         <translation type="unfinished">退出</translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="87"/>
+        <location filename="widget.cpp" line="88"/>
         <source>About</source>
         <translation type="unfinished">关于</translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="88"/>
+        <location filename="widget.cpp" line="89"/>
         <source>Settings</source>
         <translation type="unfinished">设置</translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="89"/>
+        <location filename="widget.cpp" line="90"/>
         <source>Show Main Widget</source>
         <translation type="unfinished">显示主窗口</translation>
     </message>

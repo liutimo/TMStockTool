@@ -48,16 +48,16 @@ void FramelessWidget::changeEvent(QEvent *p_event)
     }
 }
 
-void FramelessWidget::resizeEvent(QResizeEvent *event)
-{
-    QWidget::resizeEvent(event);
-    if (m_titleBar != nullptr) {
-//        mCloseBtn->move(width() - 28, 0);
-        if (layout()) {
-            layout()->setContentsMargins(0, TITLE_BAR_FIEXED_HEIGHT, 0, 0);
-        }
-    }
-}
+//void FramelessWidget::resizeEvent(QResizeEvent *event)
+//{
+//    QWidget::resizeEvent(event);
+//    if (m_titleBar != nullptr) {
+////        mCloseBtn->move(width() - 28, 0);
+//        if (layout()) {
+//            layout()->setContentsMargins(0, TITLE_BAR_FIEXED_HEIGHT, 0, 0);
+//        }
+//    }
+//}
 
 bool FramelessWidget::isMaximized() const
 {
