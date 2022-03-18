@@ -220,6 +220,11 @@
         <source>Form</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="settingswidget.ui" line="30"/>
+        <source>PushButton</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>StockTableView</name>
